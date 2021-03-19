@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  web:
+    image: centos-base-img:1.0
+    build:
+      context: ./
+      args:
+        WEB_ROOT: ${WEB_ROOT}
+        SWEB_ROOT: ${SWEB_ROOT}
+        WEB_PORT: ${WEB_PORT}
+        SWEB_PORT: ${SWEB_PORT}
+        XDEBUG_REMOTE_HOST: ${XDEBUG_REMOTE_HOST}
+        XDEBUG_PORT: ${XDEBUG_PORT}
+        XHPROF_VERSION: ${XHPROF_VERSION}
+        PHP_INI_PATH: ${PHP_INI_PATH}
+        PHP_VERSION: php72
+    command: /bin/sh -c "rm -f /run/httpd/httpd.pid && /usr/sbin/httpd -D FOREGROUND"
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      PHP_INI_PATH: "/var/www/html/cornet2"
+      WEB_ROOT: "/var/www/html/cornet2/http"
+      SWEB_ROOT: "/var/www/html/cornet2/https"
+      TZ: UTC

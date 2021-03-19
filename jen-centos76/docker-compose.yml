@@ -1,0 +1,16 @@
+version: '3.3'
+
+services: 
+  jenkins:
+    image: jenkins2.7-centos7:0.2
+    build: 
+      context: ./
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true"
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+      - "443:443"
+      - "2222:2222"
+    volumes:
+      - /var/jenkins_home
