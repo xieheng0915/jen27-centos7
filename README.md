@@ -59,7 +59,7 @@
 
         .git-credentials:
         ```
-        https://jenkins_user:xr5CFEAyqmmgjVYiGson@gitlab.ddsdev.org
+        https://jenkins_user:xr5CFEAyqmmgjVYiGson@gitlab.xxxxx.org
         ```
         .gitconfig(自動生成):
         ```
@@ -75,7 +75,7 @@
             "http-basic": {
                 "gitlab.ddsdev.org": {
                     "username": "jenkins_user",
-                    "password": "xr5CFEAyqmmgjVYiGson"
+                    "password": "xr5CFEAyqmmgjVYiGson" //test passwd
                 }
             }
         }
